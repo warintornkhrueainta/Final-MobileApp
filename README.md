@@ -1,16 +1,67 @@
-# flutter_application_2
+# 🎬 Movie Tracker App (บันทึกรายการหนัง/ซีรีส์)
 
-A new Flutter project.
+### 👤 ผู้จัดทำ
+- ชื่อ-นามสกุล: วรินทร เครืออินตา
+- รหัสผู้เข้าสอบ: 67543210065-8
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📝 รายละเอียดฟังก์ชัน (Features)
+แอปพลิเคชันสำหรับจัดการรายการหนังและซีรีส์ที่ชื่นชอบ โดยมีฟังก์ชันหลักดังนี้:
+* **Dashboard สรุปข้อมูล:** แสดงตัวเลขสถิติแยกตามสถานะ (อยากดู, กำลังดู, ดูจบ)
+* **การจัดการข้อมูล (CRUD):** เพิ่ม, อ่าน, แก้ไข และลบ รายการหนังได้
+* **ระบบค้นหา (Search):** ค้นหารายการตามชื่อเรื่องแบบ Real-time
+* **ระบบกรองข้อมูล (Filter):** เลือกดูรายการตามสถานะที่กำหนด
+* **ฐานข้อมูล Local:** บันทึกข้อมูลลงในเครื่องด้วย SQLite ข้อมูลไม่หายเมื่อปิดแอป
+<img width="473" height="909" alt="Image" src="https://github.com/user-attachments/assets/13f3964c-7bfe-41da-b357-1449e4e60bbe" />
 
-A few resources to get you started if this is your first Flutter project:
+<img width="473" height="909" alt="Image" src="https://github.com/user-attachments/assets/0d60ce73-a846-4ae9-b1ad-8ad3c7b1cd18" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img width="473" height="909" alt="Image" src="https://github.com/user-attachments/assets/b0d8dec3-c7eb-41b2-924c-24dfb10f2f5f" />
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="473" height="909" alt="Image" src="https://github.com/user-attachments/assets/8ffba7e2-53fc-420c-923c-bcf6b54f1c79" />
+
+<img width="473" height="909" alt="Image" src="https://github.com/user-attachments/assets/939319d1-2977-4f5a-ad55-9b5ffd0b8066" />
+
+<img width="473" height="909" alt="Image" src="https://github.com/user-attachments/assets/f2595e1b-3130-4202-b30b-3eb93afef6ac" />
+---
+
+## 🗄️ โครงสร้างฐานข้อมูล (Database Structure)
+
+แอปพลิเคชันนี้ใช้ฐานข้อมูล **SQLite** โดยมีตารางหลักคือ `movies` ดังนี้:
+
+### ER Diagram แบบง่าย
+
+
+| Field Name | Data Type | Description |
+| :--- | :--- | :--- |
+| **id** | INTEGER (PK) | ไอดีหลัก (Auto Increment) |
+| **title** | TEXT | ชื่อเรื่องหนัง/ซีรีส์ |
+| **type** | TEXT | ประเภท (Movie, Series) |
+| **status** | TEXT | สถานะ (อยากดู, กำลังดู, ดูจบ) |
+| **rating** | REAL | คะแนนความพึงพอใจ (0.0 - 10.0) |
+| **note** | TEXT | บันทึกเพิ่มเติม |
+| **episodes**| INTEGER | จำนวนตอน (สำหรับซีรีส์) |
+
+---
+
+## 📦 Package ที่ใช้ (Dependencies)
+แอปนี้พัฒนาด้วย Flutter โดยใช้ Library หลักดังนี้:
+1.  **provider**: สำหรับจัดการ State Management ของข้อมูล
+2.  **sqflite**: สำหรับจัดการฐานข้อมูล SQLite
+3.  **path**: สำหรับจัดการที่อยู่ไฟล์ฐานข้อมูลในเครื่อง
+
+---
+
+## 🚀 วิธีการรันแอปพลิเคชัน (How to run)
+1.  ทำการ `git clone` repository นี้ลงในเครื่อง
+2.  เปิด Command Line ใน Folder โปรเจกต์ แล้วรันคำสั่ง:
+    ```bash
+    flutter pub get
+    ```
+3.  เชื่อมต่อเครื่องจริงหรือเปิด Simulator
+4.  รันแอปด้วยคำสั่ง:
+    ```bash
+    flutter run
+    ```
+*(หรือติดตั้งผ่านไฟล์ APK ที่อยู่ในโฟลเดอร์ `/release`)*
